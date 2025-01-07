@@ -1,40 +1,72 @@
-<img src="./images/final.png" alt="Screenshot of Auto-Form Filler" width="600"/>
+# 💮 Magnolia
 
-## **PURPOSE OF THE WEBSITE**
-Welcome to the Linked Google Form Filler guide! This project was created to streamline my own data entry tasks by linking information directly to a Google Form. While this solution is tailored to my needs as a college student, I wanted to share how I did it in case you're interested in setting up something similar for yourself.  
-<br>
-If you're looking to add a linked Google Form to your website for more efficient data collection, check out the instructions below.
+<div align="center">
+	<img src="./images/final.png" alt="Screenshot of the homepage" width="600"/>
+</div>
 
-## **EXPLANATION OF THE CODE**
-This HTML code creates a form that collects user information and submits it directly to a Google Form. The form does not display the Google Form itself but instead uses hidden fields to send data to the form's backend. Here’s a breakdown of how it works:
-___
-1. **Form Tag Attributes:**
-```html
-<form id="registrationForm" action="your-google-form-response-link" method="POST" target="_blank" autocomplete="off">
+First of all, this is a website that I made for a charity project called **88224**. The project is a website that helps my teammate to fill in the Google Form faster with a good looking design that match the main theme of the entire campaign. The website is made with the most basic things like HTML, CSS, and JavaScript, and it's hosted on GitHub Pages.
+
+## Getting Started
+
+### 1. Online access:
+
+You can access the website at [https://haolamnm.is-a.dev/magnolia/](https://haolamnm.is-a.dev/magnolia/). Feel free to input any information you want, the project has ended and for now it's just a dummy form. You can also use the web development tools to inspect the website and see how it works.
+
+### 2. Local setup:
+
+1. Folk the repository.
+
+2. Clone the repository to your local computer.
+
+```bash
+git clone https://github.com/haolamnm/magnolia.git
 ```
-- `action`: URL of the Google Form where the data will be submitted.
-- `method`: The HTTP method used for the request (`POST` is used here to send data).
-- `target`: Specifies where to open the response. `_blank` opens the response in a new tab.
-- `autocomplete`: Set to `off` to prevent the browser from suggesting previously entered values.
-___
-2. **Form Fields:**
-Each field collects specific data and is linked to corresponding Google Form fields through the `name` attribute. For example:
+
+## Technical Stack
+
+1. **HTML:** The structure of the website is built using HTML.
+2. **CSS:** The styling and animation of the website is done using CSS.
+3. **JavaScript:** Some helper functions.
+
+## For Developers
+
+This is quite easy to do, but it take me some time to google and figure out how to do it. So I think it's good to share a little bit about how to make a website that can submit data to Google Form.
+
+### 1. Form tag
+
 ```html
-<input type="text" id="name" name="entry.636287609" required placeholder="In hoa chữ đầu">
+<form action="your-google-form-response-url" method="post">
 ```
-- `name="entry.636287609"`: Maps to a specific field in the Google Form for the user's name.
-- `name="entry.259393673"`: Maps to a field for the phone number.
-- Each `<input>` or `<select>` element uses these `name` attributes to correspond to the fields in the Google Form. When the form is submitted, the data is sent to the Google Form as if it was filled out directly.  
-  
-_NOTE: You can open yout Google Form and inspect the form fields using browser developer tools (usually by right-clicking the form and selecting "Inspect" or "Inspect Element") to find the `name` attributes of each field._
-___
-3. **Form Layout:**
-The form uses `<div>` elements with classes `row` and `column` to organize the layout. Each field is placed within a column inside a row, which helps in aligning the form fields properly.
-___
-4. **Submit Button:**
-The button with `type="submit"` sends the form data to the Google Form when clicked.
+
+- `action`: Make sure the URL is the response link of your Google Form. You can find it by going to your Google Form, click on the three dots on the top right corner, and select "Get pre-filled link". Fill in the form and click "Submit". Then you will be redirected to the response link.
+
+- `method`: Set it to `post`.
+
+
+### Input tag
+
 ```html
-<button type="submit" id="submitBtn">SUBMIT</button>
+<input type="text" name="entry.key">
 ```
-___
-THE END.
+
+- `name="entry.key"`: This is the key to submit the data to the Google Form. You can find it by inspecting the form fields of your Google Form. Right-click on the form field and select "Inspect" or "Inspect Element". `Ctrl + F` to search for the `name` attribute. Update the `entry.key` with the `name` attribute of the form field.
+
+_NOTE: Your entry key should look like this: `entry.636287609`._
+
+### Button tag
+
+Finally, don't forget to add a submit button to finish the form.
+
+```html
+<button type="submit">Submit</button>
+```
+
+That's it! For more details, feel free to contact me. I'm happy to help you as much as I can. 🌟
+
+Email: [haolamnm.work@gmail.com](mailto:haolamnm.work@gmail.com).
+
+GitHub: [@haolamnm](https://github.com/haolamnm).
+
+LinkedIn: [@haolamnm](https://www.linkedin.com/in/haolamnm/).
+
+---
